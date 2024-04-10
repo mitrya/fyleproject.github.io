@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel = "stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div id="loadOverlay" style="background-color:#333; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+    <h1>Tax Calculator</h1>
+
+    <div class="cover">
+        <form class="form" action="" >
+           
+            <div class="gross">
+                <div class="label-cover">
+                    <label for ="" class="label-text">Enter gross annual income</label>
+                    <span class="hovertext" data-hover="Gross annual income is your total salary in a year before any deductions">
+                        <i class="fa fa-question-circle" class="q-icon"></i>    
+                    </span>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Enter gross annual income" class="gross-income-input">
+                    <span class=" input-group-addon hovertext gross-income-error" data-hover="Please enter number">
+                        <i class="fa fa-circle-exclamation" class="q-icon"></i>    
+                    </span>
+                </div>
+              
+
+            </div>
+         
+            <div class="extra">
+                <div class="label-cover">
+                    <label for ="" class="label-text">Enter extra  income</label>
+                    <span class="hovertext" data-hover="Enter income from other sources">
+                        <i class="fa fa-question-circle" class="q-icon"></i>    
+                    </span>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" placeholder="Enter extra  income from other sources" class="extra-income-input">
+                    <span class=" input-group-addon hovertext extra-income-error" data-hover="Please enter number">
+                        <i class="fa fa-circle-exclamation" class="q-icon"></i>    
+                    </span>
+                </div>
+
+
+            </div>
+        
+            <div class="age">
+                <div class="label-cover">
+                    <label for ="" class="label-text">Enter age group</label>
+                    <span class="hovertext" data-hover="Select the age group you belong to">
+                        <i class="fa fa-question-circle" class="q-icon"></i>    
+                    </span>
+
+                </div>
+                <div class="input-group">
+                    <span class="hovertext input-group-addon age-group-error" data-hover="Input field is mandatory">
+                        <i class="fa fa-circle-exclamation" class="q-icon"></i>    
+                    </span>
+                </div>
+
+                <select id="ageGroup">
+                    <option value="0">choose option</option>
+                    <option value="1">< 40</option>
+                    <option value="2">>= 40 & < 60</option>
+                    <option value="3">>= 60</option>
+
+                </select>
+
+            </div>
+         
+
+            
+
+            <div class="deductions">
+                <div class="label-cover">
+                    <label for ="" class="label-text">Enter total applicable deductions</label>
+                    <span class="hovertext" data-hover="sum total applicable deductions">
+                        <i class="fa fa-question-circle" class="q-icon"></i>    
+                    </span>
+                </div>
+
+                
+                <div class="input-group">
+                    <input type="text" placeholder="Add total applicable deductions" class="deductions-input">
+                    <span class="hovertext input-group-addon deduction-error" data-hover="Please enter number">
+                        <i class="fa fa-circle-exclamation" class="q-icon"></i>    
+                    </span>
+                </div>
+
+
+            </div>
+
+            <!-- <div id="calculate">submit</div> -->
+            <button class="btn button " id = "calculate">Submit</button>
+        </form>
+        <!-- The Modal -->
+       
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="center-text" style="font-size: larger;">Your overall income will be </div>
+            <div class="center-text" id="result" style="font-size: large";></div>
+            <div class="center-text">after tax deductions</div>
+        </div>
+  
+  </div>
+  
+        </div>    
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
